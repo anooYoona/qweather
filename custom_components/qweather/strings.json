@@ -1,0 +1,127 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure QWeather",
+        "description": "Choose how to authenticate with the QWeather API.",
+        "menu_options": {
+          "api_key": "API Key",
+          "jwt": "JWT (Ed25519 credentials)"
+        }
+      },
+      "api_key": {
+        "title": "QWeather API Key",
+        "description": "Enter your API Key and the project's dedicated API Host (e.g. xxx.qweatherapi.com).",
+        "data": {
+          "api_key": "API Key",
+          "api_host": "Dedicated API Host (e.g. xxx.qweatherapi.com)",
+          "location": "City name or coordinates (leave blank to use Home)",
+          "language": "Language preference",
+          "indices": "Life indices to display"
+        }
+      },
+      "jwt": {
+        "title": "QWeather JWT Credentials",
+        "description": "Paste the Ed25519 private key you downloaded from the QWeather console, together with its Key ID and Project ID. Tokens are signed locally and refreshed automatically.",
+        "data": {
+          "jwt_private_key": "Ed25519 private key (PEM)",
+          "jwt_key_id": "Key ID (kid)",
+          "jwt_project_id": "Project ID (sub)",
+          "api_host": "Dedicated API Host (e.g. xxx.qweatherapi.com)",
+          "location": "City name or coordinates (leave blank to use Home)",
+          "language": "Language preference",
+          "indices": "Life indices to display"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Re-authenticate QWeather",
+        "description": "The QWeather API rejected the stored credentials. Enter them again.",
+        "data": {
+          "api_key": "API Key",
+          "jwt_private_key": "Ed25519 private key (PEM)",
+          "jwt_key_id": "Key ID (kid)",
+          "jwt_project_id": "Project ID (sub)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the QWeather server. Check your network and API Host.",
+      "invalid_auth": "Authentication failed. Verify your credentials.",
+      "invalid_location": "Could not resolve the specified location.",
+      "unknown": "Unexpected error occurred. Check the system logs."
+    },
+    "abort": {
+      "already_configured": "This location is already configured.",
+      "reauth_successful": "Re-authentication was successful."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "QWeather Settings",
+        "description": "Configure language, location, life indices and how often each category refreshes (in minutes).",
+        "data": {
+          "language": "Language preference (API & sensor data)",
+          "api_host": "Dedicated API Host (e.g. xxx.qweatherapi.com)",
+          "location": "City name or coordinates (leave blank to use Home)",
+          "indices": "Life indices to display",
+          "interval_warning": "Weather alert interval (default: 10 min)",
+          "interval_now": "Current conditions interval (default: 20 min)",
+          "interval_air": "Air quality interval (default: 30 min)",
+          "interval_forecast": "Forecast & life indices interval (default: 60 min)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the QWeather server. Check your network and API Host.",
+      "invalid_auth": "Authentication failed. Verify your credentials.",
+      "invalid_location": "Could not resolve the specified location."
+    }
+  },
+  "services": {
+    "set_language": {
+      "name": "Set Language",
+      "description": "Set the language preference (auto, zh, en) for the QWeather integration and persist it.",
+      "fields": {
+        "language": {
+          "name": "Language",
+          "description": "Language code (auto, zh, or en)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "now": {
+        "name": "Now"
+      },
+      "hourly": {
+        "name": "Hourly Forecast"
+      },
+      "forecast": {
+        "name": "Daily Forecast"
+      },
+      "air": {
+        "name": "Air Quality"
+      },
+      "warning": {
+        "name": "Weather Alerts"
+      },
+      "indices": {
+        "name": "Life Indices"
+      },
+      "temperature": {
+        "name": "Outdoor Temperature"
+      },
+      "humidity": {
+        "name": "Outdoor Humidity"
+      },
+      "pressure": {
+        "name": "Barometric Pressure"
+      },
+      "wind_speed": {
+        "name": "Wind Speed"
+      }
+    }
+  }
+}

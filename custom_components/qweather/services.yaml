@@ -1,0 +1,15 @@
+set_language:
+  name: Set Language
+  description: Set language preference (auto, zh, en) for QWeather integration and persist across restarts.
+  fields:
+    language:
+      name: Language
+      description: Target language code.
+      required: true
+      example: "zh"
+      selector:
+        select:
+          options:
+            - "auto"
+            - "zh"
+            - "en"

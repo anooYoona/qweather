@@ -1,0 +1,21 @@
+{
+  "domain": "qweather",
+  "name": "和风天气 (QWeather)",
+  "after_dependencies": [
+    "lovelace"
+  ],
+  "codeowners": [
+    "@anooYoona"
+  ],
+  "config_flow": true,
+  "dependencies": [
+    "frontend",
+    "http"
+  ],
+  "documentation": "https://github.com/anooYoona/qweather",
+  "integration_type": "service",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/anooYoona/qweather/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
