@@ -1,4 +1,5 @@
 {
   "name": "和风天气 (QWeather)",
+  "country": ["CN"],
   "render_readme": true
 }
